@@ -1,36 +1,37 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./styles.css";
 import Button from "../Button/Button";
+import { CounterProps } from "./types";
 
-function Counter() {
-  const [count, setCount] = useState<number>(5);
+function Counter({ count, onMinus, onPlus} : CounterProps) {
+  // const [count, setCount] = useState<number>(5);
 
-  //альтернатива деструктуризации массива в строчке 5, который возвращает вызов хука useState
-  // const count = result[0];
-  // const setCount = result[1];
-  // console.log(count);
-  // console.log(setCount);
+  // //альтернатива деструктуризации массива в строчке 5, который возвращает вызов хука useState
+  // // const count = result[0];
+  // // const setCount = result[1];
+  // // console.log(count);
+  // // console.log(setCount);
 
-  console.log("Render");
+  // console.log("Render");
 
-  // let a = 1;
-  // console.log(a);
-  // a = 2;
-  // console.log(a);
+  // // let a = 1;
+  // // console.log(a);
+  // // a = 2;
+  // // console.log(a);
 
-  const onMinusClick = (): void => {
-    setCount((prevCount) => prevCount - 1);
-  };
+  // const onMinusClick = (): void => {
+  //   setCount((prevCount) => prevCount - 1);
+  // };
 
-  const onPlusClick = (): void => {
-    setCount((prevValue) => prevValue + 1);
-  };
+  // const onPlusClick = (): void => {
+  //   setCount((prevValue) => prevValue + 1);
+  // };
 
   return (
     <div className="counter-component">
-      <Button name="-" onClick={onMinusClick} />
+      <Button name="-" onClick={onMinus} />
       <div className="counter-result">{count}</div>
-      <Button name="+" onClick={onPlusClick} />
+      <Button name="+" onClick={onPlus} />
     </div>
   );
 }
