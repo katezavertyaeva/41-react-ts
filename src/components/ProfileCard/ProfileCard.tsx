@@ -1,5 +1,5 @@
 import "./styles.css";
-import avatar from "../../assets/avatar.jpg";
+import avatar from "assets/avatar.jpg";
 import { User } from "./types";
 
 function ProfileCard() {

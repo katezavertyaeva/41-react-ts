@@ -1,9 +1,9 @@
 // import { useState } from "react";
+import Button from "components/Button/Button";
 import "./styles.css";
-import Button from "../Button/Button";
 import { CounterProps } from "./types";
 
-function Counter({ count, onMinus, onPlus} : CounterProps) {
+function Counter({ count, onMinus, onPlus, disabledMinus, disabledPlus} : CounterProps) {
   // const [count, setCount] = useState<number>(5);
 
   // //альтернатива деструктуризации массива в строчке 5, который возвращает вызов хука useState
@@ -29,9 +29,9 @@ function Counter({ count, onMinus, onPlus} : CounterProps) {
 
   return (
     <div className="counter-component">
-      <Button name="-" onClick={onMinus} />
+      <Button name="-" onClick={onMinus} disabled={disabledMinus}/>
       <div className="counter-result">{count}</div>
-      <Button name="+" onClick={onPlus} />
+      <Button name="+" onClick={onPlus} disabled={disabledPlus}/>
     </div>
   );
 }

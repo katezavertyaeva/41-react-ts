@@ -21,10 +21,19 @@
   border-radius: 4px;
 }
 
+.button-component:hover {
+  background: #565acc;
+}
+
 .primary-button {
   background-color: rgb(17, 17, 73);
 }
 
 .delete-button {
   background-color: rgb(199, 19, 19);
+}
+
+.button:disabled {
+  background-color: grey;
+  cursor: auto;
 }
