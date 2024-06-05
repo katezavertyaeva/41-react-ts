@@ -1,4 +1,4 @@
-import "./styles.css";
+import { ProfileCardWrapper, UserName, Img, UserData } from "./styles";
 import avatar from "assets/avatar.jpg";
 import { User } from "./types";
 
@@ -12,12 +12,12 @@ function ProfileCard() {
   };
 
   return (
-    <div className="profile-card-wrapper">
-      <h2 className="user-name">{userData.userName}</h2>
-      <img src={avatar} />
-      <p className="user-data">{userData.profession}</p>
-      <p className="user-data">{userData.hobbies[0]}</p>
-    </div>
+    <ProfileCardWrapper>
+      <UserName>{userData.userName}</UserName>
+      <Img src={avatar} />
+      <UserData>{userData.profession}</UserData>
+      <UserData>{userData.hobbies[0]}</UserData>
+    </ProfileCardWrapper>
   );
 }
 

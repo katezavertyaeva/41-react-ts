@@ -1,5 +1,10 @@
-import "./styles.css";
 import Button from "components/Button/Button";
+import {
+  FeedbackContainer,
+  FeedbackResultContainer,
+  LikeDislikeContainer,
+  Result
+} from './styles'
 import { FeedbackProps } from "./types";
 
 function Feedback({ like, dislike, addLike, addDislike, resetResults }: FeedbackProps) {
@@ -20,19 +25,19 @@ function Feedback({ like, dislike, addLike, addDislike, resetResults }: Feedback
   // };
 
   return (
-    <div className="feedback-container">
-      <div className="feedback-result-container">
-        <div className="like-dislike-container">
-          <div className="result">{like}</div>
+    <FeedbackContainer>
+      <FeedbackResultContainer>
+        <LikeDislikeContainer>
+          <Result>{like}</Result>
           <Button name="Like" onClick={addLike} />
-        </div>
-        <div className="like-dislike-container">
+        </LikeDislikeContainer>
+        <LikeDislikeContainer>
           <Button name="Dislike" onClick={addDislike} />
-          <div className="result">{dislike}</div>
-        </div>
-      </div>
+          <Result>{dislike}</Result>
+        </LikeDislikeContainer>
+      </FeedbackResultContainer>
       <Button name="Reset results" onClick={resetResults} />
-    </div>
+    </FeedbackContainer>
   );
 }
 
