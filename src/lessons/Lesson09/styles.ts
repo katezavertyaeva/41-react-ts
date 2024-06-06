@@ -13,3 +13,7 @@ export const Result = styled.div`
   font-size: 34px;
   color: #1f27f5;
 `
+
+export const Img = styled.img`
+ width: 400px;
+`

@@ -1,14 +1,38 @@
 import { ChangeEvent, useState, useEffect } from "react";
-import { Lesson09Component, Result } from "./styles";
+import { Lesson09Component, Result, Img } from "./styles";
 import Input from 'components/Input/Input'
 
 function Lesson09() {
   const [inputValue, setInputValue] = useState<string>('');
   const [inputValue2, setInputValue2] = useState<string>('');
-
+  const [dogImageUrl, setDogImageUrl] = useState<string>('')
   console.log('Lesson09 update')
   const example = 23
   console.log(example)
+
+  const getDogPhoto = async () => {
+    try {
+      const response = await fetch('https://dog.ceo/api/breeds/image/random')
+      const result = await response.json()
+      console.log(response)
+
+      if (!response.ok) {
+        throw Object.assign(new Error('API error'), { error: result })
+      } else {
+        setDogImageUrl(result.message)
+      }
+
+    } catch (error) {
+      console.log('Error')
+    }
+  }
+
+  // Выполняем функцию при загрузке страницы
+  useEffect(() => { getDogPhoto() }, [])
+
+    // Выполняем функцию при изменении значения в первом поле
+ useEffect(() => { getDogPhoto() }, [inputValue])
+
 
   //Вызов useEffect в момент создания компонента
   // useEffect(() => { console.log('Mounting') }, [])
@@ -41,6 +65,7 @@ function Lesson09() {
       <Result>{inputValue}</Result>
       <Input name='example2-control' placeholder="Ex2 control" value={inputValue2} onChange={onChangeExample2Input} />
       <Result>{inputValue2}</Result>
+      <Img src={dogImageUrl} />
     </Lesson09Component>
   )
 }
