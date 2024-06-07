@@ -67,7 +67,17 @@ function Lesson07() {
   }
 
   //Поднятие состояния
-  const [count, setCount] = useState<number>(0);
+  // const [count, setCount] = useState<number>(0);
+
+  const result = useState<number>(0);
+
+  // const count = result[0];
+  // const setCount = result[1];
+
+  //деструктуризация
+const [count, setCount] = result; 
+
+  console.log(result)
 
   const onMinusClick = (): void => {
     setCount((prevCount) => prevCount - 1);

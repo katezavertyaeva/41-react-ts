@@ -26,3 +26,7 @@ export const InputElement = styled.input`
   }
 `
 
+export const ErrorMessage = styled.div`
+  color: red;
+  height: 18px;
+`

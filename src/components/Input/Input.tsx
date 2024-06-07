@@ -1,8 +1,8 @@
-import { InputContainer, Label, InputElement } from "./styles";
+import { InputContainer, Label, InputElement, ErrorMessage } from "./styles";
 import { InputProps } from "./types";
 
-function Input({ name, placeholder, type = "text", label, value, onChange }: InputProps) {
-  console.log('Input update')
+function Input({ name, placeholder, type = "text", label, value, onChange, error }: InputProps) {
+  // console.log('Input update')
   return (
     <InputContainer>
       <Label>{label}</Label>
@@ -13,6 +13,7 @@ function Input({ name, placeholder, type = "text", label, value, onChange }: Inp
         value={value}
         onChange={onChange}
       />
+      <ErrorMessage>{error}</ErrorMessage>
     </InputContainer>
   );
 }
