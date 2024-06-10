@@ -2,13 +2,16 @@
 import { Footer, Header, HeaderLogo, LayoutComponent, Main, NavContainer, StyledNavLink } from "./styles"
 import Avatar from 'assets/avatar.jpg'
 import { LayoutProps } from "./types"
+import { useNavigate } from 'react-router-dom'
 
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
   return (
     <LayoutComponent>
       <Header>
-        <HeaderLogo src={Avatar} />
+        <HeaderLogo src={Avatar} onClick={() => navigate('/')} />
         <NavContainer>
           <StyledNavLink
             to='/'
@@ -24,6 +27,11 @@ function Layout({ children }: LayoutProps) {
             to='/about'
             style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}>
             About
+          </StyledNavLink>
+          <StyledNavLink
+            to='/clients'
+            style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}>
+            Clients
           </StyledNavLink>
         </NavContainer>
       </Header>

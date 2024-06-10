@@ -1,5 +1,11 @@
+import GoBack from "components/GoBack/GoBack"
+
 function About() {
-  return <>About</>
+  return (<>
+    <GoBack />
+    About
+  </>
+  )
 }
 
 export default About

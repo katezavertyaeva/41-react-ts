@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom"
+import { useEffect } from "react";
 
 import Button from "components/Button/Button"
 import { Title, UserPageWrapper } from "./styles"
@@ -12,6 +13,12 @@ function User() {
   const goHome = () => {
     navigate('/')
   }
+
+  useEffect(() => {
+    return () => {
+      console.log('Component User unmount')
+    }
+  }, [])
 
   return (
     <UserPageWrapper>

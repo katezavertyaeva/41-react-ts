@@ -4,7 +4,10 @@ import GlobalStyles from 'styles/GlobalStyles';
 import Home from 'pages/Home/Home';
 import User from 'pages/User/User';
 import About from 'pages/About/About';
-
+import Clients from 'pages/Clients/Clients';
+import Facebook from 'pages/Clients/components/Facebook/Facebook';
+import Google from 'pages/Clients/components/Google/Google';
+import Amazon from 'pages/Clients/components/Amazon/Amazon';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
@@ -13,6 +16,7 @@ import About from 'pages/About/About';
 // import Lesson09 from 'lessons/Lesson09/Lesson09';
 // import Lesson10 from 'lessons/Lesson10/Lesson10';
 // import Lesson11 from 'lessons/Lesson11/Lesson11';
+import Lesson13 from 'lessons/Lesson13/Lesson13';
 
 //Consultations
 // import Consultation03 from 'consultations/Consultation03/Consultation03';
@@ -41,15 +45,21 @@ function App() {
       {/* <Lesson10 /> */}
       {/* <Lesson11/> */}
       {/* <Homework11 /> */}
-      <Layout>
+      {/* //Example Lesson 12 */}
+      {/* <Layout>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/user' element={<User />} />
           <Route path='/about' element={<About />} />
-          <Route path='*' element={'Page not found'} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/amazon' element={<Amazon />} />
+          <Route path='/clients/facebook' element={<Facebook />} />
+          <Route path='/clients/google' element={<Google />} />
+          < Route path='*' element={'Page not found'} />
+        </Routes >
+      </Layout > */}
+      <Lesson13 />
+    </BrowserRouter >
   );
 }
 
