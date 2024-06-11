@@ -16,7 +16,8 @@ import Amazon from 'pages/Clients/components/Amazon/Amazon';
 // import Lesson09 from 'lessons/Lesson09/Lesson09';
 // import Lesson10 from 'lessons/Lesson10/Lesson10';
 // import Lesson11 from 'lessons/Lesson11/Lesson11';
-import Lesson13 from 'lessons/Lesson13/Lesson13';
+// import Lesson13 from 'lessons/Lesson13/Lesson13';
+import Weather from 'pages/Weather/Weather';
 
 //Consultations
 // import Consultation03 from 'consultations/Consultation03/Consultation03';
@@ -27,6 +28,7 @@ import Lesson13 from 'lessons/Lesson13/Lesson13';
 // import Homework08 from 'homeworks/Homework08/Homework08';
 // import Homework09 from 'homeworks/Homework09/Homework09';
 // import Homework11 from 'homeworks/Homework11/Homework11';
+// import Homework13 from 'homeworks/Homeworks13/Homework13';
 
 function App() {
 
@@ -58,7 +60,9 @@ function App() {
           < Route path='*' element={'Page not found'} />
         </Routes >
       </Layout > */}
-      <Lesson13 />
+      {/* <Lesson13 /> */}
+      {/* <Homework13 /> */}
+      <Weather />
     </BrowserRouter >
   );
 }
