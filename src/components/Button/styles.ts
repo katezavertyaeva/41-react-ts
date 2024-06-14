@@ -6,7 +6,7 @@ interface StyledButtonProps {
 
 export const StyledButton = styled.button<StyledButtonProps>`
   width: 100%;
-  height: 70px;
+  height: fit-content;
   outline: none;
   border: none;
   padding: 20px;
